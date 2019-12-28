@@ -72,7 +72,7 @@ adjdict={}
 verbdict={}
 noundict={}
 worddict={}
-wordlistfile=open("corpes_2","r")
+wordlistfile=open("corpesxxi","r")
 wordlist=wordlistfile.readlines()
 wordlistfile.close()
 lexlist=""
