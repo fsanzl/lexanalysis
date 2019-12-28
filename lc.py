@@ -259,8 +259,8 @@ RTTR=lex.rttr
 
 # Unused functions
 #print("newspaper,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,ld,ls1,ls2,vs1,vs2,cvs1,cttr,rttr,MAAS,MLTD,HD-D")
-header={"quetratadela":"Que trata de la"}
-output=f"{header[newspaper]},{year}-{month}-{day},{ninday}"
+#header={"quetratadela":"Que trata de la"}
+output=f"{newspaper},{year}-{month}-{day},{ninday}"
 #for measure in [len(wordtypes.keys()), len(swordtypes.keys()), len(lextypes.keys()), len(slextypes.keys()), wordtokens, swordtokens, lextokens, slextokens, ld, ls1, ls2, vs1, vs2, cvs1, ndw, ndwz, ndwerz, ndwesz, ttr, msttr, cttr, rttr, logttr, uber, lv, vv1, svv1, cvv1, vv2, nv, adjv, advv, modv]:
 for measure in [len(wordtypes.keys()), len(swordtypes.keys()), len(lextypes.keys()), len(slextypes.keys()), wordtokens, swordtokens, lextokens, slextokens, ld, ls1, ls2, vs1, vs2, cvs1, cttr, rttr, MAAS, MTLD, HDD]:
     if type(measure)==type(0.0):
