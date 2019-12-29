@@ -31,10 +31,12 @@ form samplename.YYYY.mm.dd.nn[.txt]
 ./lc.py filename
 
 It prints to stdout the following comma-sepatrated fields:
+
 samplename,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,LD,LS1,LS2,VS1,VS2,CVS1,CTTR,RTTR,MAAS,MLTD,HD-D
 
 
 **3. Example**
 
 ./poslem.py quetratadela.2019.12.28.1.txt
+
 ./lc.py quetratadela.2019.12.28.1.txt.pole
