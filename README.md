@@ -11,7 +11,8 @@ You should have received a copy of the GNU General Public License along with thi
 
 **2.1. poslem.py**
 
-Tokeniser, lemmatiser and PoS-tagger script using the StanfordNLP Python library (https://stanfordnlp.github.io/stanfordnlp/). This is a frontend for StanfordCoreNLP (https://stanfordnlp.github.io/CoreNLP/#about ), therefore, a full installation this toolkit with the Spanish models is required.
+Tokeniser, lemmatiser and PoS-tagger script using the StanfordNLP Python library (https://stanfordnlp.github.io/stanfordnlp/). This is a frontend for StanfordCoreNLP (https://stanfordnlp.github.io/CoreNLP/#about ), therefore, a full installation this toolkit with the Spanish models is required. It uses the UD Spanish AnCora models 0.2.0. (https://stanfordnlp.github.io/stanfordnlp/models.html)
+
 
 *Usage:*
 
