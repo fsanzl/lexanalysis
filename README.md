@@ -33,7 +33,7 @@ form samplename.YYYY.mm.dd.nn[.txt]
 
 It prints to stdout the following comma-sepatrated fields:
 
-samplename,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,LD,LS1,LS2,VS1,VS2,CVS1,CTTR,RTTR,MAAS,MLTD,HD-D
+samplename,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,LD,LS1,LS2,VS1,VS2,CVS1,TTR,CTTR,RTTR,MAAS,MLTD,HD-D
 
 
 **3. Example**
