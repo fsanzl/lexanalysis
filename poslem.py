@@ -40,15 +40,13 @@ def ud2penn(argument):
 # In this case, justt 'lang':'es' is enough.
 config = {
     "processors": "tokenize,mwt,pos,lemma", "lang": "es",
-    "use_gpu": True
+    "use_gpu": True # In case it is supported, this may speed up the calculation
 }   # Language code for the language
 # 'tokenize_model_path': 'pathto/es_ancora_tokenizer.pt',
 # 'mwt_model_path': 'pathto/es_ancora_mwt_expander.pt',
 # 'pos_model_path': '../es_ancora_tagger.pt',
 # 'pos_pretrain_path': '../es_ancora.pretrain.pt',
-# 'lemma_model_path': '../es_ancora_lemmatizer.pt',
-# 'depparse_model_path': '../es_ancora_parser.pt',
-# 'depparse_pretrain_path': '../es_ancora.pretrain.pt'
+# 'lemma_model_path': '../es_ancora_lemmatizer.pt'}
 
 try:
     entrada = sys.argv[1]
