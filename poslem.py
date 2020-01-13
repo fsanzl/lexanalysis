@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # Usage: poslem.py inputfile
-# Tokeniser, lemmatiser, PoS tagger. Converts the output from UD to PENN
+# Tokeniser, lemmatiser, PoS tagger (converts UD to PENN)
 
 import sys
 import stanfordnlp
