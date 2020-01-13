@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # Usage: poslem.py inputfile
+# Tokeniser, lemmatiser, PoS tagger. Converts the output from UD to PENN
 
 import sys
 import stanfordnlp
@@ -34,7 +35,7 @@ def ud2penn(argument):
         return argument.lemma
 
 
-# An explicit definition to the path of each model mey be necessary
+# An explicit definition to the path of each model may be necessary
 # unless DEFAULT_MODEL_DIR is correctly set in
 # /[path_to]/dist-package/path_to/stanfordnlp/utils/resources.py
 # In this case, justt 'lang':'es' is enough.
