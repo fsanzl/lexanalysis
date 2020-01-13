@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# This programme calculates some LC indicators
 import string,re,sys,os,random
 from math import sqrt,log
 from lexicalrichness2 import LexicalRichness
