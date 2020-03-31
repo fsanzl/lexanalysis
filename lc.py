@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# This programme calculates some LC indicators
 import string,re,sys,os,random
 from math import sqrt,log
 from lexicalrichness2 import LexicalRichness
@@ -227,13 +228,13 @@ cvs1=len(sverbtypes.keys())/sqrt(2*verbtokens)
 #    ndwesz=getndwesz(standard,lemmalist)
 
 # 3.2 TTR
-#msttr=ttr=len(wordtypes.keys())/float(wordtokens)
+TTR=len(wordtypes.keys())/float(wordtokens)
 #if len(lemmalist)>=standard:
 #    msttr=getmsttr(standard,lemmalist)
-cttr=len(wordtypes.keys())/sqrt(2*wordtokens)
-rttr=len(wordtypes.keys())/sqrt(wordtokens)
-#logttr=log(len(wordtypes.keys()))/log(wordtokens)
-#uber=(log(wordtokens,10)*log(wordtokens,10))/log(wordtokens/float(len(wordtypes.keys())),10)
+CTTR=len(wordtypes.keys())/sqrt(2*wordtokens)
+RTTR=len(wordtypes.keys())/sqrt(wordtokens)
+LOGTTR=log(len(wordtypes.keys()))/log(wordtokens)
+UBER=(log(wordtokens,10)*log(wordtokens,10))/log(wordtokens/float(len(wordtypes.keys())),10)
 #
 # 3.3 verb diversity
 #vv1=len(verbtypes.keys())/float(verbtokens)
@@ -254,15 +255,13 @@ try:
 except RuntimeError:
     print(f"ERROR: {newspaper}.{year}-{month}-{day}.{ninday}.pole")
 MTLD=lex.mtld(threshold=0.72)
-CTTR=lex.cttr
-RTTR=lex.rttr
 
 # Unused functions
 #print("newspaper,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,ld,ls1,ls2,vs1,vs2,cvs1,cttr,rttr,MAAS,MLTD,HD-D")
 #header={"quetratadela":"Que trata de la"}
 output=f"{newspaper},{year}-{month}-{day},{ninday}"
 #for measure in [len(wordtypes.keys()), len(swordtypes.keys()), len(lextypes.keys()), len(slextypes.keys()), wordtokens, swordtokens, lextokens, slextokens, ld, ls1, ls2, vs1, vs2, cvs1, ndw, ndwz, ndwerz, ndwesz, ttr, msttr, cttr, rttr, logttr, uber, lv, vv1, svv1, cvv1, vv2, nv, adjv, advv, modv]:
-for measure in [len(wordtypes.keys()), len(swordtypes.keys()), len(lextypes.keys()), len(slextypes.keys()), wordtokens, swordtokens, lextokens, slextokens, ld, ls1, ls2, vs1, vs2, cvs1, cttr, rttr, MAAS, MTLD, HDD]:
+for measure in [len(wordtypes.keys()), len(swordtypes.keys()), len(lextypes.keys()), len(slextypes.keys()), wordtokens, swordtokens, lextokens, slextokens, ld, ls1, ls2, vs1, vs2, cvs1, TTR, CTTR, RTTR, MAAS, MTLD, HDD]:
     if type(measure)==type(0.0):
         measure="%.5f" % measure
     output+=f",{str(measure)}"

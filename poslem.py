@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-# Usage: sta2.py inputfile
-# Produces
+# Usage: poslem.py inputfile
+# Tokeniser, lemmatiser, PoS tagger (converts UD to PENN)
 
 import sys
 import stanfordnlp
@@ -35,23 +35,20 @@ def ud2penn(argument):
         return argument.lemma
 
 
-# An explicit definition to the path of each model
-# If DEFAULT_MODEL_DIR is correctly set in
+# An explicit definition to the path of each model may be necessary
+# unless DEFAULT_MODEL_DIR is correctly set in
 # /[path_to]/dist-package/path_to/stanfordnlp/utils/resources.py
-# just 'lang':'es' is enough.
+# In this case, justt 'lang':'es' is enough.
 config = {
     "processors": "tokenize,mwt,pos,lemma", "lang": "es",
-    "use_gpu": True
+    "use_gpu": True # In case it is supported, this may speed up the calculation
 }   # Language code for the language
 # 'tokenize_model_path': 'pathto/es_ancora_tokenizer.pt',
 # 'mwt_model_path': 'pathto/es_ancora_mwt_expander.pt',
 # 'pos_model_path': '../es_ancora_tagger.pt',
 # 'pos_pretrain_path': '../es_ancora.pretrain.pt',
-# 'lemma_model_path': '../es_ancora_lemmatizer.pt',
-# 'depparse_model_path': '../es_ancora_parser.pt',
-# 'depparse_pretrain_path': '../es_ancora.pretrain.pt'
+# 'lemma_model_path': '../es_ancora_lemmatizer.pt'}
 
-# Input file newspaper.%Y.%m.%d.x
 try:
     entrada = sys.argv[1]
 except Exception:
