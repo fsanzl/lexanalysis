@@ -28,13 +28,13 @@ This code is a modified version of LCA (lexical complexity analyzer of  Lu (http
 *Usage:*
 
 All input files must be POS-tagged and lemmatised with UD tagset in the form lemma_pos. The file should contain a minumum of 50 words. The filename is expected to include the year, month, day, and  number of sample within the day. in the 
-form samplename.YYYY.mm.dd.nn[.txt] 
+form group_samplename.txt] 
 
 ./lc.py filename
 
 It prints to stdout the following comma-sepatrated fields:
 
-samplename,year,month,day,ninday,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,LD,LS1,LS2,VS1,VS2,CVS1,TTR,CTTR,RTTR,MAAS,MLTD,HD-D
+group,sample,wordtypes,swordtypes,lextypes,slextypes,wordtokens,swordtokens,lextokens,slextokens,LD,LS1,LS2,VS1,VS2,CVS1,TTR,CTTR,RTTR,MAAS,MLTD,HDD
 
 
 **3. Example**
