@@ -1,9 +1,8 @@
-#!/usr/bin/python3
-# Usage: poslem.py inputfile
-# Tokeniser, lemmatiser, PoS tagger (converts UD to PENN)
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 import sys
-import stanfordnlp
+import stanza
 
 
 def ud2penn(argument):
@@ -35,31 +34,28 @@ def ud2penn(argument):
         return argument.lemma
 
 
-# An explicit definition to the path of each model may be necessary
-# unless DEFAULT_MODEL_DIR is correctly set in
-# /[path_to]/dist-package/path_to/stanfordnlp/utils/resources.py
-# In this case, justt 'lang':'es' is enough.
+processor_dict = {
+    'tokenize': 'ancora',
+    'mwt': 'ancora',
+    'pos': 'ancora',
+    'lemma': 'ancora'
+}                                                                               
+                                                                                  
 config = {
-    "processors": "tokenize,mwt,pos,lemma", "lang": "es",
-    "use_gpu": True # In case it is supported, this may speed up the calculation
-}   # Language code for the language
-# 'tokenize_model_path': 'pathto/es_ancora_tokenizer.pt',
-# 'mwt_model_path': 'pathto/es_ancora_mwt_expander.pt',
-# 'pos_model_path': '../es_ancora_tagger.pt',
-# 'pos_pretrain_path': '../es_ancora.pretrain.pt',
-# 'lemma_model_path': '../es_ancora_lemmatizer.pt'}
+    'lang': 'es',
+    'processors': processor_dict
+}                              
 
 try:
     entrada = sys.argv[1]
 except Exception:
     entrada = "entrada"
 
-nlp = stanfordnlp.Pipeline(**config)
+nlp = stanza.Pipeline(**config)
 
 f = open(entrada, "r")
 texto = nlp(f.read())
 f.close()
-
 
 print(*[f'{word.lemma+"_"}{ud2penn(word)}'
         for sent in texto.sentences for word in sent.words],
